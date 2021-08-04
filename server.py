@@ -1,4 +1,9 @@
 from flask import Flask, jsonify, request, render_template
+from database import initialize
+
+
+#initialize database 
+initialize.init()
 
 
 # Creating a new "app" by using the Flask constructor. Passes __name__ as a parameter.
@@ -11,10 +16,17 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
-
+@app.route("/read")
+def read():
+    #read database
+	#jsonify data
+	#return data
+	return "no test data yet"
+		
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+	# add database call to test 
 	print("POST request")
 	return "Hello World!"
 
