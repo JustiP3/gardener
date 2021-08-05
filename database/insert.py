@@ -11,16 +11,20 @@ def insert(n, t, h, s):
 
     # need to validate data 
     print("data", n, t, h, s)
+    # sqlite3 doesn't auto-increment id??
+    id = 2 
+
     conn = sqlite3.connect('plants.db')
     print("Opened plants database successfully");
 
     #insert
-    conn.execute("INSERT INTO PLANTS (ID, NAME, TEMP, HUMIDITY, SOIL_MOISTURE) \
-        VALUES (1, 'BASIL', 70, 30, 50 )")
+    statement = f" INSERT INTO PLANTS VALUES ('{id}', '{n}', '{t}', '{h}', '{s}') "
+    conn.execute(statement)
 
     conn.commit()
     print("Record created successfully")
 
     conn.close()
+
 
 

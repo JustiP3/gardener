@@ -27,8 +27,7 @@ def read():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	# add database call to test 
-	insert.insert("basil", 1,2,3)
-	print("POST request")
+	insert.insert("oregano", 1,2,3)
 	return "Hello World!"
 
 
