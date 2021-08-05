@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, render_template
-from database import initialize
+from database import initialize, insert
 
 
 #initialize database 
@@ -27,9 +27,9 @@ def read():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	# add database call to test 
+	insert.insert("basil", 1,2,3)
 	print("POST request")
 	return "Hello World!"
-
 
 
 
